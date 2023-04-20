@@ -31,9 +31,10 @@ namespace Scripts.Logic
             _savedSelection = new List<Cell>();
         }
 
-        public void Initialize()
+        public void Initialize(int countToFill)
         {
-            CountToFill = Random.Range(1, 7);
+            CountToFill = countToFill;
+            SetRandomColorFromSource();
             UpdateText();
         }
 
@@ -62,10 +63,11 @@ namespace Scripts.Logic
             _savedSelection = new List<Cell>();
         }
         
-        public void SetRandomColorFromSource(ColorPaletteStaticData colorPaletteStaticData, int number)
+        public void SetRandomColorFromSource()
         {
+            ColorPaletteStaticData colorPaletteStaticData = Resources.Load<ColorPaletteStaticData>("StaticData/ColorPallete");
             List<Color> colors = colorPaletteStaticData.Colors;
-            Color = colors[number];
+            Color = colors[Random.Range(0, colors.Count)];
         }
     }
 }

@@ -32,7 +32,7 @@ namespace _Root.Scripts.Editor
         private void SetupNumberCell(Cell cell)
         {
             var numberCell = cell.gameObject.AddComponent<NumberCell>();
-            numberCell.Initialize();
+            numberCell.Initialize(2);
         }
 
         private void SetupText(GameObject canvasObject)

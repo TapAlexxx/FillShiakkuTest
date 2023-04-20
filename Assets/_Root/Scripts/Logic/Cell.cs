@@ -30,7 +30,7 @@ namespace Scripts.Logic
         {
             Position = position;
             _startPosition = transform.position;
-            _startScale = transform.localScale;
+            _startScale = new Vector3(0.8f, 0.1f, 0.8f);
             _selectedScale = targetScale;
         }
 

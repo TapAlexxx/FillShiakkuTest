@@ -16,7 +16,7 @@ namespace _Root.Scripts.Editor
             _number = EditorGUILayout.IntField("Number of Floors: ", _number);
             if (GUILayout.Button("SetColor from pallete"))
             {
-                cell.SetRandomColorFromSource(Resources.Load<ColorPaletteStaticData>("StaticData/ColorPallete"), _number);
+                cell.SetRandomColorFromSource();
             }
         }
     }
