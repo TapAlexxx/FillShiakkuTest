@@ -1560,7 +1560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1584402639}
   <CountToFill>k__BackingField: 2
-  <Color>k__BackingField: {r: 0.8679245, g: 0.36354572, b: 0.547838, a: 1}
+  <Color>k__BackingField: {r: 0.7169812, g: 0.52353156, b: 0.59456384, a: 1}
 --- !u!1 &364108521
 GameObject:
   m_ObjectHideFlags: 0
@@ -3321,7 +3321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 364108522}
   <CountToFill>k__BackingField: 2
-  <Color>k__BackingField: {r: 0.8679245, g: 0.36354572, b: 0.547838, a: 1}
+  <Color>k__BackingField: {r: 0.7830189, g: 0.5052688, b: 0.60725516, a: 1}
 --- !u!1 &905210872
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,7 +3932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1940451413}
   <CountToFill>k__BackingField: 6
-  <Color>k__BackingField: {r: 0.5566038, g: 0.19113562, b: 0.20359479, a: 1}
+  <Color>k__BackingField: {r: 0.6415094, g: 0.27475968, b: 0.2865903, a: 1}
 --- !u!1001 &976590203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6213,7 +6213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1007012517}
   <CountToFill>k__BackingField: 6
-  <Color>k__BackingField: {r: 0.9811321, g: 0.7587625, b: 0.34617302, a: 1}
+  <Color>k__BackingField: {r: 0.67058825, g: 0.48235294, b: 0.654902, a: 1}
 --- !u!1001 &1781002343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6689,7 +6689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 957036473}
   <CountToFill>k__BackingField: 3
-  <Color>k__BackingField: {r: 0.46777472, g: 0.754717, b: 0.38732645, a: 1}
+  <Color>k__BackingField: {r: 0.34509805, g: 0.81476444, b: 0.8392157, a: 1}
 --- !u!1001 &1888757747
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7039,7 +7039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 2046310201}
   <CountToFill>k__BackingField: 2
-  <Color>k__BackingField: {r: 0.745283, g: 0.48091847, b: 0.72185826, a: 1}
+  <Color>k__BackingField: {r: 0.7735849, g: 0.7121789, b: 0.3386258, a: 1}
 --- !u!1001 &1930864315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7124,7 +7124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1050381118}
   <CountToFill>k__BackingField: 2
-  <Color>k__BackingField: {r: 0.735849, g: 0.5383218, b: 0.47483087, a: 1}
+  <Color>k__BackingField: {r: 0.4745098, g: 0.7372549, b: 0.49733552, a: 1}
 --- !u!1 &1940451412
 GameObject:
   m_ObjectHideFlags: 0
@@ -7790,7 +7790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 233149667}
   <CountToFill>k__BackingField: 2
-  <Color>k__BackingField: {r: 0.9811321, g: 0.7587625, b: 0.34617302, a: 1}
+  <Color>k__BackingField: {r: 0.8207547, g: 0.6720037, b: 0.39798862, a: 1}
 --- !u!114 &2055741510 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6787660665338548461, guid: 4cd2fd8f43662cb428452930906f31f5, type: 3}
@@ -7922,7 +7922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1892414107}
   <CountToFill>k__BackingField: 4
-  <Color>k__BackingField: {r: 0.26607332, g: 0.48546857, b: 0.6981132, a: 1}
+  <Color>k__BackingField: {r: 0.28362405, g: 0.43700376, b: 0.5849056, a: 1}
 --- !u!1 &2080763866
 GameObject:
   m_ObjectHideFlags: 0
@@ -8012,7 +8012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1599302351}
   <CountToFill>k__BackingField: 4
-  <Color>k__BackingField: {r: 0.5566038, g: 0.19113562, b: 0.20359479, a: 1}
+  <Color>k__BackingField: {r: 0.6886792, g: 0.38592023, b: 0.39568663, a: 1}
 --- !u!114 &2098278332 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6787660665338548461, guid: 4cd2fd8f43662cb428452930906f31f5, type: 3}
@@ -8075,4 +8075,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 115777910}
   <CountToFill>k__BackingField: 4
-  <Color>k__BackingField: {r: 0.9607844, g: 0.43921572, b: 0.2901961, a: 1}
+  <Color>k__BackingField: {r: 0.8301887, g: 0.5036826, b: 0.41039515, a: 1}
