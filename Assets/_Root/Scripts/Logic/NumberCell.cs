@@ -46,7 +46,7 @@ namespace Scripts.Logic
         public void SaveSelection(List<Cell> currentSelection)
         {
             _savedSelection = currentSelection;
-            foreach (Cell cell in currentSelection)
+            foreach (Cell cell in _savedSelection)
             {
                 cell.InteractedFilled += ResetSelection;
             }
@@ -56,8 +56,8 @@ namespace Scripts.Logic
         {
             foreach (Cell cell in _savedSelection)
             {
-                cell.ResetCell();
                 cell.InteractedFilled -= ResetSelection;
+                cell.ResetCell();
             }
 
             _savedSelection = new List<Cell>();
@@ -68,6 +68,12 @@ namespace Scripts.Logic
             ColorPaletteStaticData colorPaletteStaticData = Resources.Load<ColorPaletteStaticData>("StaticData/ColorPallete");
             List<Color> colors = colorPaletteStaticData.Colors;
             Color = colors[Random.Range(0, colors.Count)];
+        }
+
+        public void TryResetCell()
+        {
+            if (_savedSelection.Count > 0) 
+                ResetSelection();
         }
     }
 }

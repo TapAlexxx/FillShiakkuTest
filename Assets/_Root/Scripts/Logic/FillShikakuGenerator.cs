@@ -34,7 +34,6 @@ namespace Scripts.Logic
 
                 if (needNewNumber)
                 {
-                    int indexOf = numbers.IndexOf(number) + 1;
                     int num = number;
                     while (num == number)
                     {
@@ -57,25 +56,23 @@ namespace Scripts.Logic
                         if (grid[i, j] != -1)
                             continue;
                         Debug.Log($"number = {number}, x = {i}, y = {j}");
+                        float randomFit = Random.Range(0, 1f);
                         if (number == 2)
                         {
                             width = 2;
-                            if (CanFitVertical(i, j,width))
+                            if (randomFit > 0.5f)
                             {
-                                Debug.Log("vertical place");
-                                grid[i, j] = number;
-                                grid[i, j + 1] = 0;
-                                needNewNumber = true;
-                                break;
+                                if (TryFitHorizontal(i, j, width, number, ref needNewNumber))
+                                    break;
+                                if (TryFitVertical(i, j, width, number, ref needNewNumber)) 
+                                    break;
                             }
-
-                            if (CanFitHorizontal(i, j, width))
+                            else
                             {
-                                Debug.Log("horizontal place");
-                                grid[i, j] = number;
-                                grid[i + 1, j] = 0;
-                                needNewNumber = true;
-                                break;
+                                if (TryFitVertical(i, j, width, number, ref needNewNumber)) 
+                                    break;
+                                if (TryFitHorizontal(i, j, width, number, ref needNewNumber))
+                                    break;
                             }
 
                             attempts++;
@@ -84,24 +81,19 @@ namespace Scripts.Logic
                         if (number == 3)
                         {
                             width = 3;
-                            if (CanFitVertical(i, j,width))
+                            if (randomFit > 0.5f)
                             {
-                                Debug.Log("vertical place");
-                                grid[i, j] = number;
-                                grid[i, j + 1] = 0;
-                                grid[i, j + 2] = 0;
-                                needNewNumber = true;
-                                break;
+                                if (TryFitHorizontal(i, j, width, number, ref needNewNumber))
+                                    break;
+                                if (TryFitVertical(i, j, width, number, ref needNewNumber)) 
+                                    break;
                             }
-
-                            if (CanFitHorizontal(i, j, width))
+                            else
                             {
-                                Debug.Log("horizontal place");
-                                grid[i, j] = number;
-                                grid[i + 1, j] = 0;
-                                grid[i + 2, j] = 0;
-                                needNewNumber = true;
-                                break;
+                                if (TryFitVertical(i, j, width, number, ref needNewNumber)) 
+                                    break;
+                                if (TryFitHorizontal(i, j, width, number, ref needNewNumber))
+                                    break;
                             }
 
                             attempts++;
@@ -127,28 +119,19 @@ namespace Scripts.Logic
                         if (number == 5)
                         {
                             width = 5;
-                            if (CanFitVertical(i, j, width))
+                            if (randomFit > 0.5f)
                             {
-                                Debug.Log("vertical place");
-                                grid[i, j] = number;
-                                grid[i, j + 1] = 0;
-                                grid[i, j + 2] = 0;
-                                grid[i, j + 3] = 0;
-                                grid[i, j + 4] = 0;
-                                needNewNumber = true;
-                                break;
+                                if (TryFitHorizontal(i, j, width, number, ref needNewNumber))
+                                    break;
+                                if (TryFitVertical(i, j, width, number, ref needNewNumber)) 
+                                    break;
                             }
-
-                            if (CanFitHorizontal(i, j,width))
+                            else
                             {
-                                Debug.Log("horizontal place");
-                                grid[i, j] = number;
-                                grid[i + 1, j] = 0;
-                                grid[i + 2, j] = 0;
-                                grid[i + 3, j] = 0;
-                                grid[i + 4, j] = 0;
-                                needNewNumber = true;
-                                break;
+                                if (TryFitVertical(i, j, width, number, ref needNewNumber)) 
+                                    break;
+                                if (TryFitHorizontal(i, j, width, number, ref needNewNumber))
+                                    break;
                             }
 
                             attempts++;
@@ -196,6 +179,56 @@ namespace Scripts.Logic
             }
 
             Validate();
+        }
+
+        private bool TryFitVertical(int i, int j, int width, int number, ref bool needNewNumber)
+        {
+            if (CanFitVertical(i, j, width))
+            {
+                Debug.Log("vertical place");
+                FillVerticalLine(i, j, number);
+                needNewNumber = true;
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool TryFitHorizontal(int i, int j, int width, int number, ref bool needNewNumber)
+        {
+            if (CanFitHorizontal(i, j, width))
+            {
+                Debug.Log("horizontal place");
+                FillHorizontalLine(i, j, number);
+                needNewNumber = true;
+                return true;
+            }
+
+            return false;
+        }
+
+        private void FillHorizontalLine(int x, int y, int number)
+        {
+            int randomNumPosition = Random.Range(0, number);
+            for (int i = 0; i < number; i++)
+            {
+                if(i == randomNumPosition)
+                    grid[x + i, y] = number;
+                else
+                    grid[x + i, y] = 0;
+            }
+        }
+
+        public void FillVerticalLine(int x, int y, int number)
+        {
+            int randomNumPosition = Random.Range(0, number);
+            for (int i = 0; i < number; i++)
+            {
+                if(i == randomNumPosition)
+                    grid[x, y + i] = number;
+                else
+                    grid[x, y + i] = 0;
+            }
         }
 
         private void Validate()

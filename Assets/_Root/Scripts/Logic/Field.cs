@@ -11,8 +11,14 @@ namespace Scripts.Logic
         public void Initialize(Cell[,] grid)
         {
             _grid = grid;
-            foreach (Cell cell in grid) 
+            foreach (Cell cell in grid)
+            {
                 cell.ResetCell();
+                if (cell.TryGetComponent(out NumberCell numberCell))
+                {
+                    numberCell.TryResetCell();
+                }
+            }
         }
 
         public bool GetCellsInRange(Vector2Int startPosition, Vector2Int currentPosition, out List<Cell> list)
