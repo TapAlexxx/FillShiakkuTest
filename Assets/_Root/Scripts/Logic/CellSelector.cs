@@ -18,6 +18,7 @@ namespace Scripts.Logic
         private bool _isSelecting;
         private int _cellMask;
         private Cell _currentCell;
+        private Color _selectedColor;
 
         private void Start()
         {
@@ -81,7 +82,7 @@ namespace Scripts.Logic
 
                     Color markColor = _numberCells.Count == 1
                         ? _numberCells[0].Color
-                        : new Color(0.84f, 0.84f, 0.84f);
+                        : _selectedColor;
                     if(!cell.IsSelected)
                         cell.MakeSelected();
                     cell.SetColor(markColor);
@@ -122,6 +123,7 @@ namespace Scripts.Logic
         {
             _currentSelection = new List<Cell>();
             _numberCells = new List<NumberCell>();
+            _selectedColor = new Color(0.57f, 0.57f, 0.57f);
             _cellMask = LayerMask.GetMask("Cell", "NumberCell");
         }
 

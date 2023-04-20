@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _Root.Scripts.Editor;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -59,6 +60,12 @@ namespace Scripts.Logic
             }
 
             _savedSelection = new List<Cell>();
+        }
+        
+        public void SetRandomColorFromSource(ColorPaletteStaticData colorPaletteStaticData, int number)
+        {
+            List<Color> colors = colorPaletteStaticData.Colors;
+            Color = colors[number];
         }
     }
 }

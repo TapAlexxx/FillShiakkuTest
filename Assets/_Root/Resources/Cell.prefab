@@ -112,4 +112,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderer: {fileID: 490785029533459269}
   targetScale: {x: 0.95, y: 0.2, z: 0.95}
-  defaultColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+  defaultColor: {r: 0.3019608, g: 0.3019608, b: 0.3019608, a: 1}
