@@ -69,20 +69,21 @@ namespace Scripts.Logic
 
                     if (!_currentSelection.Contains(cell))
                     {
-                        if (cell.IsSelected)
+                        if (cell.IsFilled)
                         {
-                            ResetSelection();
+                            cell.InteractFilled();
+                            /*ResetSelection();
                             StopSelect();
-                            return;
+                            return;*/
                         }
                         _currentSelection.Add(cell);
                     }
 
                     Color markColor = _numberCells.Count == 1
                         ? _numberCells[0].Color
-                        : Color.grey;
-                    
-                    cell.MakeSelected();
+                        : new Color(0.84f, 0.84f, 0.84f);
+                    if(!cell.IsSelected)
+                        cell.MakeSelected();
                     cell.SetColor(markColor);
                 }
             }
@@ -150,8 +151,13 @@ namespace Scripts.Logic
 
         private void FillSelection()
         {
+            NumberCell numberCell = _numberCells[0];
+            numberCell.SaveSelection(_currentSelection);
             foreach (Cell cell in _currentSelection)
-                cell.SetColor(_numberCells[0].Color);
+            {
+                cell.SetColor(numberCell.Color);
+                cell.Fill();
+            }
         }
 
         private void StopSelect()

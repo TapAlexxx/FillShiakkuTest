@@ -18,6 +18,13 @@ namespace Scripts.Logic
             InitializeGrid();
         }
 
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Space))
+                foreach (Cell cell in cells)
+                    cell.ResetCell();
+        }
+
         private void InitializeGrid()
         {
             _cells = new Cell[gridSizeX, gridSizeY];
