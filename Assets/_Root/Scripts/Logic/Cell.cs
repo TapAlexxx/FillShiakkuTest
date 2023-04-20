@@ -1,4 +1,5 @@
 ﻿using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Scripts.Logic
@@ -9,6 +10,8 @@ namespace Scripts.Logic
         
         public Vector2Int Position { get; private set; }
         public bool IsSelected { get; private set; }
+        
+        
         private void OnValidate()
         {
             if (!_renderer) TryGetComponent(out _renderer);
